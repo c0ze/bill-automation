@@ -1,0 +1,6 @@
+.env
+*.csv
+*.pdf
+*.json
+*.html
+.DS_Store
