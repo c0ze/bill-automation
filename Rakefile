@@ -1,5 +1,6 @@
 require_relative "ntt_facilities"
 require_relative "iij_mio"
+require_relative "tokyo_gas"
 
 desc "import bills"
 task :import_bills do
@@ -10,7 +11,11 @@ task :import_bills do
 
   iij = IIJ_MIO.new
   iij.login
-  # iij.download_all
   iij.update_from_sheet
   iij.quit
+
+  tg = TOKYO_GAS.new
+  tg.login
+  tg.update_from_sheet
+  tg.quit
 end
